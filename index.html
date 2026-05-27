@@ -87,36 +87,6 @@
         </div>
     </section>
 
-    <section id="simulador" class="section">
-        <div class="app-container">
-            <h2><i class="fa-solid fa-laptop-code"></i> Simulador EcoTrack v1.0</h2>
-            <p class="app-subtitle">Selecciona un producto para calcular el impacto de CO2 y ver la alternativa ecológica:</p>
-            <div class="app-box">
-                <label for="producto">¿Qué deseas comprar?</label>
-                <select id="producto" onchange="calcularImpacto()">
-                    <option value="zapatos">Zapatos Deportivos 👟</option>
-                    <option value="celular">Teléfono Celular 📱</option>
-                    <option value="camiseta">Camiseta de Algodón 👕</option>
-                </select>
-                <div class="results-grid">
-                    <div class="card card-red">
-                        <h4>Envío Estándar</h4>
-                        <p id="co2-estandar">14.2 kg CO2</p>
-                        <span>Huella de carbono alta</span>
-                    </div>
-                    <div class="card card-green">
-                        <h4>Con EcoTrack 🌿</h4>
-                        <p id="co2-eco">3.5 kg CO2</p>
-                        <span>¡Ahorro del 75%!</span>
-                    </div>
-                </div>
-                <div class="solution-tip">
-                    <p><strong>Alternativa sugerida:</strong> <span id="eco-tip">Punto de recogida comercial cercano + empaque reciclado.</span></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="section grid-2 inverso">
         <div class="image-box">
             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Tecnología">
