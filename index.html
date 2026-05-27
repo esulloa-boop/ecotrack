@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Aplicación Interactiva</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Acción por el Clima 🌍</span>
+            <h1>EcoTrack</h1>
+            <p>Reduce tu huella de carbono mientras compras online de forma inteligente.</p>
+            <a href="#simulador" class="btn-main">Probar la Aplicación</a>
+        </div>
+    </header>
+
+    <section class="section bg-light" style="border-bottom: 2px dashed #4caf50;">
+        <div class="app-container" style="background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left;">
+            <h3 style="color: #2e7d32; margin-bottom: 15px;"><i class="fa-solid fa-circle-info"></i> ¿Qué estás construyendo aquí?</h3>
+            <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #444;">
+                Estás creando un prototipo de <strong>aplicación web ecológica</strong> enfocada en el Objetivo de Desarrollo Sostenible (ODS) "Acción por el Clima". El objetivo es simular una extensión que calcula el daño ambiental de las compras en línea.
+            </p>
+            <h4 style="color: #333; margin-bottom: 10px; font-size: 0.95rem;">Así funciona el engranaje de tu código:</h4>
+            <ul style="list-style-type: none; padding-left: 0; font-size: 0.95rem; color: #555;">
+                <li style="margin-bottom: 8px;"><strong>📄 index.html:</strong> Es el esqueleto. Contiene los textos, las imágenes de internet y la estructura del simulador visual.</li>
+                <li style="margin-bottom: 8px;"><strong>🎨 estilos.css:</strong> Es la capa visual. Se encarga de transformar el texto plano en tarjetas modernas, poner el fondo de las hojas y acomodar todo en columnas limpias.</li>
+                <li style="margin-bottom: 8px;"><strong>⚡ script.js:</strong> Es el cerebro de la app. Hace que cuando cambies de producto en el menú (zapatos, celular), los números de CO2 se recalculen al instante sin recargar la página.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section grid-2">
+        <div class="content-box">
+            <h2><i class="fa-solid fa-triangle-exclamation text-danger"></i> El Problema Ambiental</h2>
+            <p>El comercio electrónico genera millones de toneladas de CO2 al año debido al transporte logístico y embalajes plásticos. La mayoría de los compradores no tiene idea de cuánto contamina su paquete antes de llegar a casa.</p>
+        </div>
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logística">
+        </div>
+    </section>
+
+    <section id="simulador" class="section">
+        <div class="app-container">
+            <h2><i class="fa-solid fa-laptop-code"></i> Simulador EcoTrack v1.0</h2>
+            <p class="app-subtitle">Selecciona un producto para calcular el impacto de CO2 y ver la alternativa ecológica:</p>
+            <div class="app-box">
+                <label for="producto">¿Qué deseas comprar?</label>
+                <select id="producto" onchange="calcularImpacto()">
+                    <option value="zapatos">Zapatos Deportivos 👟</option>
+                    <option value="celular">Teléfono Celular 📱</option>
+                    <option value="camiseta">Camiseta de Algodón 👕</option>
+                </select>
+                <div class="results-grid">
+                    <div class="card card-red">
+                        <h4>Envío Estándar</h4>
+                        <p id="co2-estandar">14.2 kg CO2</p>
+                        <span>Huella de carbono alta</span>
+                    </div>
+                    <div class="card card-green">
+                        <h4>Con EcoTrack 🌿</h4>
+                        <p id="co2-eco">3.5 kg CO2</p>
+                        <span>¡Ahorro del 75%!</span>
+                    </div>
+                </div>
+                <div class="solution-tip">
+                    <p><strong>Alternativa sugerida:</strong> <span id="eco-tip">Punto de recogida comercial cercano + empaque reciclado.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section grid-2 inverso">
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Tecnología">
+        </div>
+        <div class="content-box">
+            <h2><i class="fa-solid fa-leaf"></i> Nuestra Solución Tecnológica</h2>
+            <p>EcoTrack funciona como una extensión inteligente que analiza tu carrito de compras en tiempo real. Te sugiere rutas de entrega optimizadas, puntos de retiro cercanos y marcas con certificación ambiental para mitigar el daño ecológico.</p>
+        </div>
+    </section>
+
+    <section id="contacto" class="section bg-dark">
+        <div class="form-container">
+            <h2>Únete al cambio global</h2>
+            <p>¿Quieres probar la extensión beta de EcoTrack en tu navegador?</p>
+            <form onsubmit="event.preventDefault(); alert('¡Gracias por sumarte a EcoTrack!');">
+                <input type="email" placeholder="Ingresa tu correo electrónico" required style="padding: 15px 20px; width: 60%; border-radius: 50px 0 0 50px; border: none; outline: none; font-size: 1rem;">
+                <button type="submit" style="padding: 15px 25px; background-color: #8bc34a; color: white; border: none; border-radius: 0 50px 50px 0; font-weight: bold; cursor: pointer; font-size: 1rem;">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Aplicación Interactiva</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Acción por el Clima 🌍</span>
+            <h1>EcoTrack</h1>
+            <p>Reduce tu huella de carbono mientras compras online de forma inteligente.</p>
+            <a href="#simulador" class="btn-main">Probar la Aplicación</a>
+        </div>
+    </header>
+
+    <section class="section bg-light" style="border-bottom: 2px dashed #4caf50;">
+        <div class="app-container" style="background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: left;">
+            <h3 style="color: #2e7d32; margin-bottom: 15px;"><i class="fa-solid fa-circle-info"></i> ¿Qué estás construyendo aquí?</h3>
+            <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 15px; color: #444;">
+                Estás creando un prototipo de <strong>aplicación web ecológica</strong> enfocada en el Objetivo de Desarrollo Sostenible (ODS) "Acción por el Clima". El objetivo es simular una extensión que calcula el daño ambiental de las compras en línea.
+            </p>
+            <h4 style="color: #333; margin-bottom: 10px; font-size: 0.95rem;">Así funciona el engranaje de tu código:</h4>
+            <ul style="list-style-type: none; padding-left: 0; font-size: 0.95rem; color: #555;">
+                <li style="margin-bottom: 8px;"><strong>📄 index.html:</strong> Es el esqueleto. Contiene los textos, las imágenes de internet y la estructura del simulador visual.</li>
+                <li style="margin-bottom: 8px;"><strong>🎨 estilos.css:</strong> Es la capa visual. Se encarga de transformar el texto plano en tarjetas modernas, poner el fondo de las hojas y acomodar todo en columnas limpias.</li>
+                <li style="margin-bottom: 8px;"><strong>⚡ script.js:</strong> Es el cerebro de la app. Hace que cuando cambies de producto en el menú (zapatos, celular), los números de CO2 se recalculen al instante sin recargar la página.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section grid-2">
+        <div class="content-box">
+            <h2><i class="fa-solid fa-triangle-exclamation text-danger"></i> El Problema Ambiental</h2>
+            <p>El comercio electrónico genera millones de toneladas de CO2 al año debido al transporte logístico y embalajes plásticos. La mayoría de los compradores no tiene idea de cuánto contamina su paquete antes de llegar a casa.</p>
+        </div>
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logística">
+        </div>
+    </section>
+
+    <section id="simulador" class="section">
+        <div class="app-container">
+            <h2><i class="fa-solid fa-laptop-code"></i> Simulador EcoTrack v1.0</h2>
+            <p class="app-subtitle">Selecciona un producto para calcular el impacto de CO2 y ver la alternativa ecológica:</p>
+            <div class="app-box">
+                <label for="producto">¿Qué deseas comprar?</label>
+                <select id="producto" onchange="calcularImpacto()">
+                    <option value="zapatos">Zapatos Deportivos 👟</option>
+                    <option value="celular">Teléfono Celular 📱</option>
+                    <option value="camiseta">Camiseta de Algodón 👕</option>
+                </select>
+                <div class="results-grid">
+                    <div class="card card-red">
+                        <h4>Envío Estándar</h4>
+                        <p id="co2-estandar">14.2 kg CO2</p>
+                        <span>Huella de carbono alta</span>
+                    </div>
+                    <div class="card card-green">
+                        <h4>Con EcoTrack 🌿</h4>
+                        <p id="co2-eco">3.5 kg CO2</p>
+                        <span>¡Ahorro del 75%!</span>
+                    </div>
+                </div>
+                <div class="solution-tip">
+                    <p><strong>Alternativa sugerida:</strong> <span id="eco-tip">Punto de recogida comercial cercano + empaque reciclado.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section grid-2 inverso">
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Tecnología">
+        </div>
+        <div class="content-box">
+            <h2><i class="fa-solid fa-leaf"></i> Nuestra Solución Tecnológica</h2>
+            <p>EcoTrack funciona como una extensión inteligente que analiza tu carrito de compras en tiempo real. Te sugiere rutas de entrega optimizadas, puntos de retiro cercanos y marcas con certificación ambiental para mitigar el daño ecológico.</p>
+        </div>
+    </section>
+
+    <section id="contacto" class="section bg-dark">
+        <div class="form-container">
+            <h2>Únete al cambio global</h2>
+            <p>¿Quieres probar la extensión beta de EcoTrack en tu navegador?</p>
+            <form onsubmit="event.preventDefault(); alert('¡Gracias por sumarte a EcoTrack!');">
+                <input type="email" placeholder="Ingresa tu correo electrónico" required style="padding: 15px 20px; width: 60%; border-radius: 50px 0 0 50px; border: none; outline: none; font-size: 1rem;">
+                <button type="submit" style="padding: 15px 25px; background-color: #8bc34a; color: white; border: none; border-radius: 0 50px 50px 0; font-weight: bold; cursor: pointer; font-size: 1rem;">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
